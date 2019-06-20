@@ -18,7 +18,6 @@ public class Main {
 	public static void main(String[] args) {
 
 		EntityManager em = DatabaseHandle.getEntityManagerFactory();
-		EntityTransaction transaction = em.getTransaction();
 		
 		@SuppressWarnings("unchecked")
 		List<Partie> lPartie = em.createQuery("Select p from Partie p order by p.date_ desc").getResultList();
