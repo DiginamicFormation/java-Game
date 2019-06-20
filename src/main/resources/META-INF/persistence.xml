@@ -11,8 +11,8 @@
 			<!-- The JDBC URL to the database instance -->
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/jpa_game?useSSL=false&amp;serverTimezone=UTC" />
-				<!-- pour efficher toutes les requete -->
-			<!-- <property name="hibernate.show_sql" value="true"/> -->
+				<!-- pour afficher toutes les requetes -->
+				<!-- <property name="hibernate.show_sql" value="true"/> -->
 			<!-- The database username -->
 			<property name="javax.persistence.jdbc.user" value="root" />
 
