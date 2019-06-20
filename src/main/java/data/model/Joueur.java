@@ -1,10 +1,16 @@
 package data.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,8 +18,20 @@ import javax.persistence.Table;
 public class Joueur {
 	
 	@Id
+	@Column(name = "id_joueur")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	
+	@ManyToMany
+	@JoinTable(name="joueur_partie", 
+		joinColumns= @JoinColumn(name="id_joueur", referencedColumnName="id_joueur"),
+		inverseJoinColumns= @JoinColumn(name="id_partie", referencedColumnName="id_partie")
+		)
+	private List<Partie> parties;
+	
+	@OneToOne
+	@JoinColumn(name="id_avatar")
+	private Avatar avatar;
 	
 	@Column(name = "nom", length = 30)
 	private String nom;
@@ -27,52 +45,59 @@ public class Joueur {
 	
 	public Joueur() {
 	}
-
-
-	protected Integer getId() {
+	
+	public Integer getId() {
 		return id;
 	}
-
-
-	protected void setId(Integer id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
-
-
-	protected String getNom() {
+	public String getNom() {
 		return nom;
 	}
-
-
-	protected void setNom(String nom) {
+	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
-
-	protected String getMail() {
+	public String getMail() {
 		return mail;
 	}
-
-
-	protected void setMail(String mail) {
+	public void setMail(String mail) {
 		this.mail = mail;
 	}
-
-
-	protected String getPseudo() {
+	public String getPseudo() {
 		return pseudo;
 	}
-
-
-	protected void setPseudo(String pseudo) {
+	public void setPseudo(String pseudo) {
 		this.pseudo = pseudo;
 	}
+	
+	
+	
+	public List<Partie> getParties() {
+		return parties;
+	}
 
+	public void setParties(List<Partie> parties) {
+		this.parties = parties;
+	}
+
+	
+	public Avatar getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(Avatar avatar) {
+		this.avatar = avatar;
+	}
 
 	@Override
 	public String toString() {
-		return "Joueur [id=" + id + ", nom=" + nom + ", mail=" + mail + ", pseudo=" + pseudo + "]";
+		return "Joueur [id=" + id + ", avatar=" + avatar + ", nom=" + nom + ", mail=" + mail
+				+ ", pseudo=" + pseudo + "]";
 	}
+
 	
+
 	
+
 }
