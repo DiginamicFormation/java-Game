@@ -1,0 +1,16 @@
+INSERT INTO `jpa_game`.`joueur` ( `nom`, `mail`, `pseudo`) VALUES ('yoann', 'yoann@plop.frf', 'John');
+INSERT INTO `jpa_game`.`joueur` ( `nom`, `mail`, `pseudo`) VALUES ('alexandre', 'alexndre@plop.frf', 'tete de fesse');
+INSERT INTO `jpa_game`.`joueur` ( `nom`, `mail`, `pseudo`) VALUES ('mel', 'mel@plop.frf', 'chat moche');
+INSERT INTO `jpa_game`.`joueur` ( `nom`, `mail`, `pseudo`) VALUES ('youcef', 'youcef@plop.fr', 'youyou');
+INSERT INTO `jpa_game`.`joueur` ( `nom`, `mail`, `pseudo`) VALUES ('amandine', 'amandine@plop.frf', 'didine');
+INSERT INTO `jpa_game`.`joueur` ( `nom`, `mail`, `pseudo`) VALUES ('samir', 'samir@plop.frf', 'samuel');
+INSERT INTO `jpa_game`.`joueur` ( `nom`, `mail`, `pseudo`) VALUES ('anniss', 'anniss@plop.frf', 'dieu la fait');
+INSERT INTO `jpa_game`.`partie` ( `date_`, `niveau`, `score`) VALUES ('2018-05-04', '7', '456762');
+INSERT INTO `jpa_game`.`partie` ( `date_`, `niveau`, `score`) VALUES ('2018-02-04', '4', '4567');
+INSERT INTO `jpa_game`.`partie` ( `date_`, `niveau`, `score`) VALUES ('2018-05-12', '7', '23');
+INSERT INTO `jpa_game`.`partie` ( `date_`, `niveau`, `score`) VALUES ('2018-02-08', '4', '21');
+INSERT INTO `jpa_game`.`joueur_partie` ( `id_joueur`, `id_partie`) VALUES (1,2);
+INSERT INTO `jpa_game`.`joueur_partie` ( `id_joueur`, `id_partie`) VALUES (1,3);
+INSERT INTO `jpa_game`.`joueur_partie` ( `id_joueur`, `id_partie`) VALUES (2,2);
+INSERT INTO `jpa_game`.`joueur_partie` ( `id_joueur`, `id_partie`) VALUES (4,1);
+COMMIT;
