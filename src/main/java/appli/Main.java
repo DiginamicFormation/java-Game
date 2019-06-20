@@ -12,20 +12,17 @@ import data.model.Avatar;
 import data.model.Engin;
 import data.model.Joueur;
 import data.model.Partie;
+import repository.JoueurRepository;
 
 public class Main {
 
 	public static void main(String[] args) {
 
-		EntityManager em = DatabaseHandle.getEntityManagerFactory();
+		JoueurRepository.getJoueurByName("DOE");
+		JoueurRepository.getPseudoPlayerSorted();
+		JoueurRepository.getPlayerPlayedToday(LocalDate.of(2018, 10, 20));
+		JoueurRepository.getPlayerEngins("DOE");
 		
-		@SuppressWarnings("unchecked")
-		List<Partie> lPartie = em.createQuery("Select p from Partie p order by p.date_ desc").getResultList();
-		for (Partie p : lPartie) {
-			System.out.println(p.toString());
-		}
-		
-		em.close();
 		System.exit(0);
 	}
 
